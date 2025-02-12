@@ -16,10 +16,7 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
-import { FaGithub } from "react-icons/fa";
-import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
-import { signUpWithGithub, signUpWithGoogle } from "@/lib/oauth";
 
 const SignInCard = () => {
   const { mutate, isPending } = useLogin();
