@@ -100,6 +100,8 @@ cd jira-clone
 npm install
 # or
 yarn install
+# or
+bun add
 ```
 
 ### 3️⃣ Configure Environment Variables
@@ -125,6 +127,8 @@ NEXT_APPWRITE_KEY = your-appwrite-key
 npm run dev
 # or
 yarn dev
+# or
+bun run dev
 ```
 
 The app should now be running at [http://localhost:3000](http://localhost:3000) 🚀
