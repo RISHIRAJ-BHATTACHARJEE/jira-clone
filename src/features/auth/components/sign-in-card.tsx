@@ -19,9 +19,7 @@ import {
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import Link from "next/link";
-import { signUpWithGithub } from "@/lib/oauth";
-import { account } from "@/lib/appwriteClient";
-import { OAuthProvider } from "appwrite";
+import { signUpWithGithub, signUpWithGoogle } from "@/lib/oauth";
 
 const SignInCard = () => {
   const { mutate, isPending } = useLogin();
@@ -36,14 +34,6 @@ const SignInCard = () => {
   const onSubmit = (values: z.infer<typeof loginSchema>) => {
     mutate({ json: values });
   };
-
-  const handleGoogleLogin = () => {
-    account.createOAuth2Session(
-      OAuthProvider.Google,
-      `${window.location.origin}/workspaces`,
-      `${window.location.origin}/sign-up`
-    )
-  }
 
   return (
     <Card className="w-full h-full md:w-[487px] border-none shadow-none">
@@ -107,7 +97,7 @@ const SignInCard = () => {
           variant="secondary"
           size="lg"
           className="w-full"
-          onClick={handleGoogleLogin}
+          onClick={() => signUpWithGoogle()}
         >
           <FcGoogle className="mr-2 size-5" />
           Login with Google
