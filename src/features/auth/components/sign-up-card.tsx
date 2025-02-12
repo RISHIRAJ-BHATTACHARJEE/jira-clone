@@ -24,9 +24,7 @@ import { Button } from "@/components/ui/button";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { useRegister } from "../api/use-register";
-import { account } from "@/lib/appwriteClient";
-import { OAuthProvider } from "appwrite";
-import { signUpWithGithub } from "@/lib/oauth";
+import { signUpWithGithub, signUpWithGoogle } from "@/lib/oauth";
 
 export const SignUpCard = () => {
   const { mutate, isPending } = useRegister();
@@ -42,14 +40,6 @@ export const SignUpCard = () => {
   const onSubmit = (values: z.infer<typeof registerSchema>) => {
     mutate({ json: values });
   };
-
-  const handleGoogleLogin = () => {
-    account.createOAuth2Session(
-      OAuthProvider.Google,
-      `${window.location.origin}/workspaces`,
-      `${window.location.origin}/sign-up`
-    )
-  }
 
 
   return (
@@ -140,7 +130,7 @@ export const SignUpCard = () => {
           variant="secondary"
           size="lg"
           className="w-full"
-          onClick={handleGoogleLogin}
+          onClick={() => signUpWithGoogle()}
         >
           <FcGoogle className="mr-2 size-5" />
           Login with Google
