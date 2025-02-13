@@ -135,11 +135,6 @@ The app should now be running at [http://localhost:3000](http://localhost:3000) 
 
 ---
 
-## 📜 License
-This project is open-source and available under the **MIT License**.
-
----
-
 ## 🌟 Contributing
 We welcome contributions! If you'd like to contribute, please fork the repository and submit a pull request.
 
