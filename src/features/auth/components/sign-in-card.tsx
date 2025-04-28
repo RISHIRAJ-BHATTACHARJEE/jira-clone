@@ -95,6 +95,10 @@ const SignInCard = () => {
             <span className="text-blue-700">&nbsp;Sign Up</span>
           </Link>
         </p>
+        <p>
+          Test UserID:- admin@example.com
+          Test Password:- admin-example-password
+        <p/>
       </CardContent>
     </Card>
   );
